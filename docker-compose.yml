@@ -1,0 +1,14 @@
+services:
+  gemini_duckdb:
+    container_name: gemini_duckdb
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: gemini_duckdb
+    volumes:
+      - ./src:/app
+    tty: true
+    ports:
+      - 8501:8501
+    env_file: .env
+
